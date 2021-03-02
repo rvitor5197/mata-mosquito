@@ -20,8 +20,9 @@ function randomPosition() {
     if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove();
 
+        //remove life logic
         if (lifes > 3) {
-            alert('game over')
+            window.location.href = 'game_over.html'
         } else {
             document.getElementById('life' + lifes).src = "imagens/coracao_vazio.png"
 
