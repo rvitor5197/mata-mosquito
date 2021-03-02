@@ -17,8 +17,19 @@
 
 <body onresize="adjustSizeLayout()">
 
+    <div class="panel">
+        <div class="lifes">
+            <img src="./imagens/coracao_vazio.png" alt="coracao vazio">
+            <img src="./imagens/coracao_cheio.png" alt="vida">
+            <img src="./imagens/coracao_cheio.png" alt="vida">
+        </div>
+        <div class="cronometer">
+            Tempo restante: ?
+        </div>
+    </div>
+
+
     <script>
-    
         setInterval(function(){
             randomPosition()
         }, 1000)
