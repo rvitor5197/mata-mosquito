@@ -12,27 +12,37 @@ function adjustSizeLayout() {
 
 adjustSizeLayout()
 
-//generating random position based on window size
-//gerando posição randomica com base no tamanho da janela
-var positionX = Math.floor(Math.random() * largura) - 90
-var positionY = Math.floor(Math.random() * altura) - 90
+function randomPosition() {
 
-positionX = positionX < 0 ? 0 : positionX
-positionY = positionY < 0 ? 0 : positionY
+    //remove previous mosquito if it exists
+    //remover mosquito anterior (caso exista)
+    if (document.getElementById('mosquito')) {
+        document.getElementById('mosquito').remove();
+    }
 
-console.log(positionX, positionY);
+    //generating random position based on window size
+    //gerando posição randomica com base no tamanho da janela
+    var positionX = Math.floor(Math.random() * largura) - 90
+    var positionY = Math.floor(Math.random() * altura) - 90
 
-//create the html element randomly
-//criar o elemento html aleatoriamente
-var mosquito = document.createElement('img')
-mosquito.src = 'imagens/mosca.png'
-mosquito.className = randomSize() + ' ' + randomSide()
-mosquito.style.left = positionX + 'px'
-mosquito.style.top = positionY + 'px'
-mosquito.style.position = 'absolute'
+    positionX = positionX < 0 ? 0 : positionX
+    positionY = positionY < 0 ? 0 : positionY
 
-document.body.appendChild(mosquito)
+    console.log(positionX, positionY);
 
+    //create the html element randomly
+    //criar o elemento html aleatoriamente
+    var mosquito = document.createElement('img')
+    mosquito.src = 'imagens/mosca.png'
+    mosquito.className = randomSize() + ' ' + randomSide()
+    mosquito.style.left = positionX + 'px'
+    mosquito.style.top = positionY + 'px'
+    mosquito.style.position = 'absolute'
+    mosquito.id = 'mosquito'
+
+    document.body.appendChild(mosquito)
+
+}
 //generating random class for mosquito size
 //gerando classe aleatoria para o tamanho do mosquito
 function randomSize() {
