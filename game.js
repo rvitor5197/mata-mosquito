@@ -2,6 +2,7 @@
 
 var altura = 0
 var largura = 0
+var lifes = 1
 
 function adjustSizeLayout() {
     altura = window.innerHeight;
@@ -18,6 +19,16 @@ function randomPosition() {
     //remover mosquito anterior (caso exista)
     if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove();
+
+        if (lifes > 3) {
+            alert('game over')
+        } else {
+            document.getElementById('life' + lifes).src = "imagens/coracao_vazio.png"
+
+            lifes++
+        }
+
+
     }
 
     //generating random position based on window size
@@ -39,6 +50,9 @@ function randomPosition() {
     mosquito.style.top = positionY + 'px'
     mosquito.style.position = 'absolute'
     mosquito.id = 'mosquito'
+    mosquito.onclick = function () {
+        this.remove();
+    }
 
     document.body.appendChild(mosquito)
 
