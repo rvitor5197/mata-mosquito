@@ -26,15 +26,12 @@ console.log(positionX, positionY);
 //criar o elemento html aleatoriamente
 var mosquito = document.createElement('img')
 mosquito.src = 'imagens/mosca.png'
-mosquito.className = randomSize()
+mosquito.className = randomSize() + ' ' + randomSide()
 mosquito.style.left = positionX + 'px'
 mosquito.style.top = positionY + 'px'
 mosquito.style.position = 'absolute'
 
 document.body.appendChild(mosquito)
-
-randomSize();
-
 
 //generating random class for mosquito size
 //gerando classe aleatoria para o tamanho do mosquito
@@ -56,3 +53,16 @@ function randomSize() {
 
 }
 
+function randomSide() {
+    var classe = Math.floor(Math.random() * 2)
+
+    switch (classe) {
+        case 0:
+            return 'ladoA'
+
+        case 1:
+            return 'ladoB'
+
+
+    }
+}
