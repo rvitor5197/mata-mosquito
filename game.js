@@ -5,6 +5,22 @@ var largura = 0
 var lifes = 1
 var tempo = 10
 
+var createTimeMosquito = 1300
+
+var nivel = window.location.search
+nivel = nivel.replace('?', '')
+
+if (nivel === 'normal') {
+    //1300
+    createTimeMosquito = 1300
+} else if (nivel === 'hard') {
+    //900
+    createTimeMosquito = 900
+} else if (nivel === 'ninja') {
+    //700
+    createTimeMosquito = 700
+}
+
 function adjustSizeLayout() {
     altura = window.innerHeight;
     largura = window.innerWidth;
