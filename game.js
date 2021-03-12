@@ -3,7 +3,7 @@
 var altura = 0
 var largura = 0
 var lifes = 1
-var tempo = 10
+var tempo = 30
 
 var createTimeMosquito = 1300
 
