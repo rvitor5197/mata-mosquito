@@ -21,7 +21,7 @@ var cronometer = setInterval(function () {
     if (tempo < 0) {
         clearInterval(cronometer)
         clearInterval(createMosquito)
-        alert('Vitoria!')
+        window.location.href = 'victory.html'
     } else {
         document.getElementById('cronometer').innerHTML = tempo;
     }
