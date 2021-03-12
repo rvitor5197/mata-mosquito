@@ -24,13 +24,16 @@
             <img id="life3" src="./imagens/coracao_cheio.png" />
         </div>
         <div class="cronometer">
-            Tempo restante: ?
+            Tempo restante: <span id="cronometer"></span>
         </div>
     </div>
 
 
     <script>
-        setInterval(function(){
+
+        document.getElementById('cronometer').innerHTML = tempo;
+
+        var createMosquito = setInterval(function(){
             randomPosition()
         }, 2000)
     </script>

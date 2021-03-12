@@ -3,15 +3,30 @@
 var altura = 0
 var largura = 0
 var lifes = 1
+var tempo = 10
 
 function adjustSizeLayout() {
     altura = window.innerHeight;
     largura = window.innerWidth;
 
-    console.log(largura, altura);
+    //console.log(largura, altura);
 }
 
 adjustSizeLayout()
+
+var cronometer = setInterval(function () {
+
+    tempo -= 1
+
+    if (tempo < 0) {
+        clearInterval(cronometer)
+        clearInterval(createMosquito)
+        alert('Vitoria!')
+    } else {
+        document.getElementById('cronometer').innerHTML = tempo;
+    }
+
+}, 1000)
 
 function randomPosition() {
 
@@ -40,7 +55,7 @@ function randomPosition() {
     positionX = positionX < 0 ? 0 : positionX
     positionY = positionY < 0 ? 0 : positionY
 
-    console.log(positionX, positionY);
+    //console.log(positionX, positionY);
 
     //create the html element randomly
     //criar o elemento html aleatoriamente
