@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link 
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" 
+    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function startGame(){
+            var nivel = document.getElementById('nivel').value
+
+            if(nivel === ''){
+                alert('Selecione um nível válido!')
+                return false
+            }
+        }
+    </script>
+
+    <title>Página inicial</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="./imagens/game.png" alt="game over">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">-- Selecione o nível --</option>
+                            <option value="normal">Normal</option>
+                            <option value="hard">Difícil</option>
+                            <option value="ninja">Ninja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button 
+                    type="button" 
+                    class="btn btn-danger btn-lg"
+                    onclick="startGame()"
+                    >
+                        Iniciar Jogo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
